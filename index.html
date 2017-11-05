@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>乐淘 - 后台管理</title>
-    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="./assets/nprogress/nprogress.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/assets/nprogress/nprogress.css">
+    <link rel="stylesheet" href="/public/css/index.css">
 </head>
 <body>
     
@@ -16,7 +16,7 @@
         <div class="profile">
             <!-- 头像 -->
             <div class="avatar img-circle">
-                <img src="./uploads/avatar.jpg">
+                <img src="/uploads/avatar.jpg">
             </div>
             <h4>布头儿</h4>
         </div>
@@ -82,7 +82,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="javascript:;" class="logout">
                                 <i class="fa fa-sign-out"></i>
                                 退出
                             </a>
@@ -133,39 +133,41 @@
             </div>
         </div>
     </div>
-    
-    <script src="./assets/jquery/jquery.min.js"></script>
-    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./assets/nprogress/nprogress.js"></script>
-    <script src="./assets/echarts/echarts.min.js"></script>
-    <script src="./js/common.js"></script>
+
+    <!-- 引入模块加载器 -->
+    <script src="/public/js/require.js"></script>
+    <script src="/public/js/config.js"></script>
     <script>
 
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
+       require(['src/index']);
 
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data:['销量']
-            },
-            xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-            },
-            yAxis: {},
-            series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+       //删除
+        // // 基于准备好的dom，初始化echarts实例
+        // var myChart = echarts.init(document.getElementById('main'));
+
+        // // 指定图表的配置项和数据
+        // var option = {
+        //     title: {
+        //         text: 'ECharts 入门示例'
+        //     },
+        //     tooltip: {},
+        //     legend: {
+        //         data:['销量']
+        //     },
+        //     xAxis: {
+        //         data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        //     },
+        //     yAxis: {},
+        //     series: [{
+        //         name: '销量',
+        //         type: 'bar',
+        //         data: [5, 20, 36, 10, 10, 20]
+        //     }]
+        // };
+
+        // // 使用刚指定的配置项和数据显示图表。
+        // myChart.setOption(option);
 
     </script>
 </body>
